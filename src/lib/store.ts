@@ -16,11 +16,22 @@ export interface CartItem {
   quantity: number;
 }
 
-// Simple cart state using a singleton pattern
 let cartItems: CartItem[] = [];
 let listeners: (() => void)[] = [];
 
+// Cached snapshots - only updated on mutations
+let itemsSnapshot: CartItem[] = [];
+let totalSnapshot = 0;
+let countSnapshot = 0;
+
+function updateSnapshots() {
+  itemsSnapshot = [...cartItems];
+  totalSnapshot = cartItems.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
+  countSnapshot = cartItems.reduce((sum, i) => sum + i.quantity, 0);
+}
+
 function notify() {
+  updateSnapshots();
   listeners.forEach((l) => l());
 }
 
@@ -31,9 +42,9 @@ export const cart = {
       listeners = listeners.filter((l) => l !== listener);
     };
   },
-  getItems: () => [...cartItems],
-  getTotal: () => cartItems.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
-  getCount: () => cartItems.reduce((sum, i) => sum + i.quantity, 0),
+  getItems: () => itemsSnapshot,
+  getTotal: () => totalSnapshot,
+  getCount: () => countSnapshot,
   add(product: Product) {
     const existing = cartItems.find((i) => i.product.id === product.id);
     if (existing) {
