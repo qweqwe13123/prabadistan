@@ -4,6 +4,7 @@ import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 import { products } from "@/lib/products";
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
         </div>
       </main>
 
+      <AboutSection />
       <Footer />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </div>

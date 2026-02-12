@@ -18,13 +18,10 @@ const Header = ({ onCartOpen }: HeaderProps) => {
         </div>
 
         <nav className="hidden gap-8 md:flex">
-          <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+          <a href="#product" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
             Каталог
           </a>
-          <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-            О нас
-          </a>
-          <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+          <a href="#about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
             Доставка
           </a>
         </nav>

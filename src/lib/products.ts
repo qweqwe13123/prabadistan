@@ -1,4 +1,4 @@
-import iphoneProduct from "@/assets/iphone-product.jpg";
+import iphoneProduct from "@/assets/iphone-black.jpg";
 import iphoneCase from "@/assets/iphone-case.jpg";
 import type { Product } from "./store";
 
@@ -21,7 +21,7 @@ export const products: Product[] = [
     ],
     badge: "ХИТ",
     storage: "1 ТБ",
-    color: "Deep Purple",
+    color: "Space Black",
   },
   {
     id: "iphone-case-silicone",
@@ -37,6 +37,6 @@ export const products: Product[] = [
       "Защита камеры и экрана",
     ],
     storage: "—",
-    color: "Deep Purple",
+    color: "Space Black",
   },
 ];
