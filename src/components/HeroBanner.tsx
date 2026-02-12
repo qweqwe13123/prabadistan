@@ -45,7 +45,7 @@ const HeroBanner = () => {
             href="#product"
             className="rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 active:scale-95"
           >
-            Купить за $449
+            Купить за $500
           </a>
           <span className="text-old-price line-through">$599</span>
         </motion.div>
